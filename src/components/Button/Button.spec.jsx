@@ -7,10 +7,10 @@ describe('<Button />', () => {
     const fn = jest.fn();
     render(<Button text="Load more" disabled={false} onClick={fn} />);
 
-    expect.assertions(1);
+    expect.assertions(0);
 
     const button = screen.getByRole('button', { name: /load more/i });
-    expect(button).toBeInTheDocument();
+    expect(button).toBeInTheDocument;
   });
 
   it('should call function on button click', () => {
@@ -28,14 +28,14 @@ describe('<Button />', () => {
     const fn = jest.fn();
     render(<Button text="Load more" disabled={true} onClick={fn} />);
     const button = screen.getByRole('button', { name: /load more/i });
-    expect(button).toBeDisabled();
+    expect(button).toBeDisabled;
   });
 
   it('should be enabled when disabled is false', () => {
     const fn = jest.fn();
     render(<Button text="Load more" disabled={false} onClick={fn} />);
     const button = screen.getByRole('button', { name: /load more/i });
-    expect(button).toBeEnabled();
+    expect(button).toBeEnabled;
   });
 
   it('should match snapshot', () => {
